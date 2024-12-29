@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antunes Motorsport</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cabeçalho fixo -->
+    <header class="fixed-header">
+        <div class="logo">
+            <h1>Antunes Motorsport</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção do banner -->
+    <section id="banner">
+        <div class="banner-content">
+            <h2>Excelência em Serviços Automotivos</h2>
+            <p>Manutenção e performance para seu veículo.</p>
+            <button onclick="abrirModal()">Agendar Serviço</button>
+        </div>
+    </section>
+
+    <!-- Modal para agendamento -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2>Agendar Serviço</h2>
+            <form id="form-agendamento">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="servico">Serviço Desejado:</label>
+                <select id="servico" name="servico" required>
+                    <option value="troca-oleo">Troca de Óleo</option>
+                    <option value="alinhamento">Alinhamento</option>
+                    <option value="freios">Freios</option>
+                    <option value="diagnostico">Diagnóstico</option>
+                </select>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sobre nós -->
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>A Antunes Motorsport combina paixão por carros com anos de experiência no setor automotivo, garantindo serviços de alta qualidade.</p>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="servicos-grid">
+            <div class="servico-item">
+                <h3>Troca de Óleo</h3>
+                <p>Óleos de alta performance para o melhor cuidado do motor.</p>
+            </div>
+            <div class="servico-item">
+                <h3>Alinhamento</h3>
+                <p>Estabilidade e conforto garantidos.</p>
+            </div>
+            <div class="servico-item">
+                <h3>Diagnóstico Eletrônico</h3>
+                <p>Tecnologia de ponta para identificar problemas.</p>
+            </div>
+            <div class="servico-item">
+                <h3>Freios e Suspensão</h3>
+                <p>Segurança em qualquer condição.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria">
+        <h2>Galeria</h2>
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="https://via.placeholder.com/600" alt="Carro 1">
+                <img src="https://via.placeholder.com/600" alt="Carro 2">
+                <img src="https://via.placeholder.com/600" alt="Carro 3">
+            </div>
+            <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Equipe -->
+    <section id="equipe">
+        <h2>Conheça Nossa Equipe</h2>
+        <div class="equipe-grid">
+            <div class="membro">
+                <img src="https://via.placeholder.com/150" alt="João Antunes">
+                <h3>João Antunes</h3>
+                <p>Mecânico Chefe</p>
+            </div>
+            <div class="membro">
+                <img src="https://via.placeholder.com/150" alt="Maria Silva">
+                <h3>Maria Silva</h3>
+                <p>Especialista em Diagnóstico</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <form id="form-contato">
+            <label for="nome-contato">Nome:</label>
+            <input type="text" id="nome-contato" name="nome" required>
+            <label for="email-contato">E-mail:</label>
+            <input type="email" id="email-contato" name="email" required>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Antunes Motorsport. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+  </html>
