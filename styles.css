@@ -1,0 +1,323 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #222; /* Cinza escuro */
+    color: #eee; /* Texto claro */
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background: #111; /* Cinza mais escuro */
+    color: #eee;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+header .logo h1 {
+    font-size: 24px;
+    color: #f4a500; /* Amarelo escuro */
+    display: inline-block;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #f44336; /* Vermelho */
+}
+
+/* Banner */
+#banner {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+        ),
+        url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+#banner h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+#banner p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+#banner button {
+    background: #f44336; /* Vermelho */
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#banner button:hover {
+    background: #d73225; /* Tom mais escuro do vermelho */
+    transform: scale(1.1);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #333;
+    color: #eee;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.modal-content input,
+.modal-content select {
+    background: #444;
+    color: #eee;
+}
+
+.modal-content button {
+    background: #f44336;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background: #d73225;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #eee;
+}
+
+/* Seções Gerais */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    color: #f4a500;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+section p {
+    color: #ccc;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+/* Sobre */
+#sobre {
+    background: #333;
+}
+
+/* Serviços */
+#servicos .servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#servicos .servico-item {
+    background: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, background 0.3s;
+}
+
+#servicos .servico-item:hover {
+    background: #555;
+    transform: scale(1.05);
+}
+
+/* Galeria */
+#galeria .carousel {
+    position: relative;
+    max-width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+#galeria .carousel-images img {
+    display: none;
+    width: 100%;
+}
+
+#galeria .carousel-images img:first-child {
+    display: block;
+}
+
+#galeria .prev,
+#galeria .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #f44336;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+#galeria .prev {
+    left: 10px;
+}
+
+#galeria .next {
+    right: 10px;
+}
+
+#galeria .prev:hover,
+#galeria .next:hover {
+    background: #d73225;
+}
+
+/* Contato */
+#contato form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+#contato label {
+    display: block;
+    margin-bottom: 5px;
+    color: #f4a500;
+}
+
+#contato input,
+#contato textarea,
+#contato button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+#contato input,
+#contato textarea {
+    background: #444;
+    color: #eee;
+}
+
+#contato button {
+    background: #f44336;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#contato button:hover {
+    background: #d73225;
+}
+
+/* Rodapé */
+footer {
+    background: #111;
+    color: #eee;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #banner h2 {
+        font-size: 32px;
+    }
+
+    #banner p {
+        font-size: 16px;
+    }
+  }
