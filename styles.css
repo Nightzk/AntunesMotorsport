@@ -59,7 +59,7 @@ header nav ul li a:hover {
             rgba(0, 0, 0, 0.6),
             rgba(0, 0, 0, 0.6)
         ),
-        url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+        url('banner.jpeg') no-repeat center center/cover;
     height: 100vh;
     text-align: center;
     display: flex;
