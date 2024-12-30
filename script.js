@@ -59,7 +59,7 @@ document.getElementById('form-agendamento').addEventListener('submit', (e) => {
         servico,
     };
 
-    emailjs.send('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', templateParams)
+    emailjs.send('service_rr8xeha', 'template_nnjfj7l', templateParams)
         .then(() => {
             alert(`Obrigado, ${nome}! Seu agendamento foi enviado com sucesso.`);
             fecharModal();
@@ -95,7 +95,7 @@ document.getElementById('form-contato').addEventListener('submit', (e) => {
         mensagem,
     };
 
-    emailjs.send('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', templateParams)
+    emailjs.send('service_rr8xeha', 'template_nnjfj7l', templateParams)
         .then(() => {
             alert(`Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.`);
             document.getElementById('form-contato').reset();
