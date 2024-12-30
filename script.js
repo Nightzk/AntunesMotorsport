@@ -34,11 +34,9 @@ function moveCarousel(n) {
 document.addEventListener('DOMContentLoaded', () => {
     moveCarousel(0); // Exibe o primeiro slide
     setInterval(() => moveCarousel(1), 5000); // Avança automaticamente a cada 5 segundos
-});
-
-// Validação do formulário de agendamento
+})
 document.getElementById('form-agendamento').addEventListener('submit', (e) => {
-    e.preventDefault(); // Evita o envio padrão do formulário
+    e.preventDefault();
 
     const nome = document.getElementById('nome').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -54,18 +52,25 @@ document.getElementById('form-agendamento').addEventListener('submit', (e) => {
         return;
     }
 
-    alert(`Obrigado, ${nome}! Seu agendamento para o serviço de ${servico} foi enviado com sucesso.`);
-    fecharModal();
-    document.getElementById('form-agendamento').reset(); // Limpa os campos do formulário
+    // Dados para o EmailJS
+    const templateParams = {
+        nome,
+        email,
+        servico,
+    };
+
+    emailjs.send('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', templateParams)
+        .then(() => {
+            alert(`Obrigado, ${nome}! Seu agendamento foi enviado com sucesso.`);
+            fecharModal();
+            document.getElementById('form-agendamento').reset();
+        })
+        .catch((error) => {
+            alert('Ocorreu um erro ao enviar o agendamento. Por favor, tente novamente.');
+            console.error('Erro:', error);
+        });
 });
 
-// Validação básica de e-mail
-function validarEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-}
-
-// Validação do formulário de contato
 document.getElementById('form-contato').addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -83,8 +88,22 @@ document.getElementById('form-contato').addEventListener('submit', (e) => {
         return;
     }
 
-    alert(`Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.`);
-    document.getElementById('form-contato').reset(); // Limpa os campos do formulário
+    // Dados para o EmailJS
+    const templateParams = {
+        nome,
+        email,
+        mensagem,
+    };
+
+    emailjs.send('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', templateParams)
+        .then(() => {
+            alert(`Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.`);
+            document.getElementById('form-contato').reset();
+        })
+        .catch((error) => {
+            alert('Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.');
+            console.error('Erro:', error);
+        });
 });
 
 // Animações ao rolar a página
