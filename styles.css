@@ -16,7 +16,6 @@ body {
 header {
     background: #111; /* Cinza mais escuro */
     color: #eee;
-    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
