@@ -118,7 +118,30 @@ const observer = new IntersectionObserver(
     { threshold: 0.2 } // Ativa quando 20% do elemento está visível
 );
 
+
+
 document.querySelectorAll('section').forEach((section) => observer.observe(section));
+
+// Expansão e recolhimento das perguntas no FAQ
+document.querySelectorAll('.faq-question').forEach((button) => {
+    button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+
+        // Fechar outras respostas abertas
+        document.querySelectorAll('.faq-answer').forEach((ans) => {
+            if (ans !== answer) {
+                ans.style.display = 'none';
+            }
+        });
+
+        // Alternar visibilidade da resposta clicada
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+        } else {
+            answer.style.display = 'block';
+        }
+    });
+});
 
 document.querySelectorAll('.faq-question').forEach((button) => {
     button.addEventListener('click', () => {
