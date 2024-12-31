@@ -120,23 +120,22 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll('section').forEach((section) => observer.observe(section));
 
-// Expansão e recolhimento das perguntas no FAQ
 document.querySelectorAll('.faq-question').forEach((button) => {
     button.addEventListener('click', () => {
         const answer = button.nextElementSibling;
 
         // Fechar outras respostas abertas
         document.querySelectorAll('.faq-answer').forEach((ans) => {
-            if (ans !== answer) {
-                ans.style.display = 'none';
+            if (ans !== answer && ans.classList.contains('open')) {
+                ans.classList.remove('open');
             }
         });
 
-        // Alternar visibilidade da resposta clicada
-        if (answer.style.display === 'block') {
-            answer.style.display = 'none';
+        // Alternar a classe "open" para a resposta clicada
+        if (answer.classList.contains('open')) {
+            answer.classList.remove('open');
         } else {
-            answer.style.display = 'block';
+            answer.classList.add('open');
         }
     });
 });
