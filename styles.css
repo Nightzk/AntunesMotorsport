@@ -400,7 +400,7 @@ footer {
     font-size: 1.2em;
     font-weight: bold;
     cursor: pointer;
-    color: #333;
+    color: #ccc;
     padding: 10px 0;
 }
 
@@ -410,7 +410,7 @@ footer {
     transition: max-height 0.3s ease-out, padding 0.3s ease-out;
     padding: 0;
     font-size: 1em;
-    color: #666;
+    color: #ccc;
 }
 .faq-answer.open {
     max-height: 200px; /* Define um limite suficiente para o conteúdo */
@@ -425,5 +425,5 @@ footer {
     display: none;
     padding: 10px 0;
     font-size: 1em;
-    color: #666;
+    color: #ccc;
 }
